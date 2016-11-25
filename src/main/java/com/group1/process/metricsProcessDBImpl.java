@@ -39,4 +39,9 @@ public class metricsProcessDBImpl implements metricsProcess {
     public void delete(String hostname, String type) {
         this.metricDAO.deleteBy(hostname, type);
     }
+
+    @Override
+    public void delete(String hostname) {
+        this.metricDAO.deleteByHostname(hostname);
+    }
 }

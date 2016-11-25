@@ -43,4 +43,8 @@ public class metricsResource {
         this.metricProcess.delete(hostname, type);
     }
 
+    @DELETE
+    @Path("/{hostname}")
+    public void deletemetrics(@PathParam("hostname") String hostname) {this.metricProcess.delete(hostname);}
+
 }

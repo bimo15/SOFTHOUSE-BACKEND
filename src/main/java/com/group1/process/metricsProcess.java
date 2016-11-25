@@ -14,4 +14,6 @@ public interface metricsProcess {
     List<metrics> find(String hostname, String type) throws NotFoundException;
 
     void delete(String hostname, String type);
+
+    void delete(String hostname);
 }

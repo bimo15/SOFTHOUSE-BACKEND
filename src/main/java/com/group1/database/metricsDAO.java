@@ -31,6 +31,9 @@ public interface metricsDAO {
     @SqlUpdate("DELETE FROM `metric` WHERE hostname = :hostname AND type = :type")
     void deleteBy(@Bind("hostname") String hostname, @Bind("type") String type);
 
+    @SqlUpdate("DELETE FROM `metric` WHERE hostname = :hostname")
+    void deleteByHostname(@Bind("hostname") String hostname);
+
     @SqlUpdate("UPDATE `metric` SET hostname = :hostname, time = :time, free = :free, used = :used, type = :type WHERE id = :id")
     void update(@BindBean metrics metric);
 
